@@ -1,0 +1,30 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+using Photon.Pun;
+
+public class NPC_Trigger : MonoBehaviour
+{
+    public string ChatText = "";
+    private GameObject Main;
+    void Start()
+    {
+        Main = GameObject.Find("Main");
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (PhotonNetwork.IsMasterClient)
+        {
+            Main.GetComponent<MainScript>().NPCChatEnter(ChatText);
+        }
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+        if (PhotonNetwork.IsMasterClient)
+        {
+            Main.GetComponent<MainScript>().NPCChatExit();
+        }
+    }
+}
