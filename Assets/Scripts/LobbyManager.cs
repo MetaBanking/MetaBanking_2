@@ -63,6 +63,6 @@ public class LobbyManager : MonoBehaviourPunCallbacks
     public override void OnJoinedRoom()
     {
         connectionInfoText.text = "방 참가 성공";
-        PhotonNetwork.LoadLevel("CharacterChoiceScene");
+        PhotonNetwork.LoadLevel("CharacterSelectScene");
     }
 }
