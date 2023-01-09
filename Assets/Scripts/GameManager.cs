@@ -8,21 +8,25 @@ public class GameManager : MonoBehaviourPunCallbacks
 {
     public string[] items = { "Bottle_Endurance", "Bottle_Health", "Bottle_Mana" };
     static int itemNum = 30;
-    public static int character;
+    public static string character;
 
     // Start is called before the first frame update
     void Start()
     {
         Vector3 randomSpawnPos = Random.insideUnitSphere * 5f;
         randomSpawnPos.y = 1f;
-        if (character == 1)
-            PhotonNetwork.Instantiate("Female1", randomSpawnPos, Quaternion.identity);
-        else if (character == 2)
-            PhotonNetwork.Instantiate("Female2", randomSpawnPos, Quaternion.identity);
-        else if (character == 3)
-            PhotonNetwork.Instantiate("Female3", randomSpawnPos, Quaternion.identity);
-        else if (character == 4)
-            PhotonNetwork.Instantiate("Female4", randomSpawnPos, Quaternion.identity);
+        if (character == "Casual_Shirt_Blue_White")
+            PhotonNetwork.Instantiate("Casual_Shirt_Blue_White", randomSpawnPos, Quaternion.identity);
+        else if (character == "Casual_Shirt_Grey_Blue")
+            PhotonNetwork.Instantiate("Casual_Shirt_Grey_Blue", randomSpawnPos, Quaternion.identity);
+        else if (character == "Suit_Open_Shirt_Grey_Blue")
+            PhotonNetwork.Instantiate("Suit_Open_Shirt_Grey_Blue", randomSpawnPos, Quaternion.identity);
+        else if (character == "Suit_Shirt_Beige")
+            PhotonNetwork.Instantiate("Suit_Shirt_Beige", randomSpawnPos, Quaternion.identity);
+        else if (character == "Suit_Tie_Black")
+            PhotonNetwork.Instantiate("Suit_Tie_Black", randomSpawnPos, Quaternion.identity);
+        else if (character == "Suit_Top_Grey_Black")
+            PhotonNetwork.Instantiate("Suit_Top_Grey_Black", randomSpawnPos, Quaternion.identity);
         // PhotonNetwork.Instantiate("Player", randomSpawnPos, Quaternion.identity);
     }
 

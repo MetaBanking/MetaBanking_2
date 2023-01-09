@@ -53,7 +53,7 @@ public class PlayerControl_2 : MonoBehaviourPun
 
         // √ ±‚»≠
         applySpeed = walkSpeed;
-
+        theCamera = Camera.main;
         originPosY = theCamera.transform.localPosition.y;
         applyCrouchPosY = originPosY;
     }

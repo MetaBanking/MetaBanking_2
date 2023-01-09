@@ -4,8 +4,16 @@
 TagManager:
   serializedVersion: 2
   tags:
+  - Stair
+  - Climb
+  - Fly
   - Bullet
   - Door
+  - Selector
+  - FEMALE3
+  - FEMALE1
+  - FEMALE4
+  - FEMALE2
   layers:
   - Default
   - TransparentFX
@@ -27,17 +35,17 @@ TagManager:
   - 
   - 
   - 
+  - Animal
+  - 
+  - 
+  - Enemy
   - 
   - 
   - 
   - 
   - 
   - 
-  - 
-  - 
-  - 
-  - 
-  - 
+  - Item
   - 
   m_SortingLayers:
   - name: Default

@@ -24,24 +24,24 @@ public class CharacterChoiceManager : MonoBehaviourPunCallbacks
     public void setCharacterAsFemail1()
     {
         PhotonNetwork.LoadLevel("MainScene");
-        GameManager.character = 1;
+        GameManager.character = "";
     }
 
     public void setCharacterAsFemail2()
     {
         PhotonNetwork.LoadLevel("MainScene");
-        GameManager.character = 2;
+        GameManager.character = "";
     }
 
     public void setCharacterAsFemail3()
     {
         PhotonNetwork.LoadLevel("MainScene");
-        GameManager.character = 3;
+        GameManager.character = "";
     }
 
     public void setCharacterAsFemail4()
     {
         PhotonNetwork.LoadLevel("MainScene");
-        GameManager.character = 4;
+        GameManager.character = "";
     }
 }
