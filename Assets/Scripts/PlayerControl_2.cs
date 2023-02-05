@@ -29,6 +29,11 @@ public class PlayerControl_2 : MonoBehaviourPun
     private float originPosY;
     private float applyCrouchPosY;
 
+    //캐릭터가 앉게 하는 animation
+    private Animator animator;
+    public GameObject player;
+    private bool seat; 
+
     // 민감도
     [SerializeField]
     private float lookSensitivity;
@@ -56,6 +61,9 @@ public class PlayerControl_2 : MonoBehaviourPun
         theCamera = Camera.main;
         originPosY = theCamera.transform.localPosition.y;
         applyCrouchPosY = originPosY;
+        //앉기 animation위한 추가
+        animator = player.GetComponent<Animator>();
+        seat = false;
     }
 
     void Update()
@@ -67,6 +75,24 @@ public class PlayerControl_2 : MonoBehaviourPun
         Move();
         CameraRotation();
         CharacterRotation();
+
+        //앉기 animation위한 추가
+        if (seat = false) 
+        {
+            if (Input.GetButtonDown("q"))
+            {
+                animator.SetBool("Sit", true);
+                seat = true;
+            }
+        }else
+        {
+            if (Input.GetButtonDown("q"))
+            {
+                animator.SetBool("Sit", false);
+                seat = false;
+            }
+        }
+        
     }
 
     // 지면 체크

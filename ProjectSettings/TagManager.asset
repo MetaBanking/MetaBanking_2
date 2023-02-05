@@ -14,6 +14,7 @@ TagManager:
   - FEMALE1
   - FEMALE4
   - FEMALE2
+  - News_content
   layers:
   - Default
   - TransparentFX
@@ -50,4 +51,7 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: Popup
+    uniqueID: 1408703587
     locked: 0

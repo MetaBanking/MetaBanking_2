@@ -6,8 +6,10 @@ using UnityEngine;
 public class Billboard_Trigger : MonoBehaviour
 {
     public GameObject news;
+    public GameObject text_default;
+    public GameObject text_show;
 
-    // Start is called before the first frame update
+    
     void Start()
     {
         
@@ -18,24 +20,33 @@ public class Billboard_Trigger : MonoBehaviour
     {
         if ( collision.gameObject.tag == "Player")
         {
-            UnityEngine.Debug.Log("enter");
-            news.SetActive(true);
+            text_default.SetActive(false);
+            text_show.SetActive(true);
         }
 
     }
 
+    private void OnTriggerStay(Collider collision) 
+    {
+        if (Input.GetButtonDown("c"))
+        {
+            news.SetActive(true);
+        }
+    }
+
     private void OnTriggerExit(Collider collision)
     {
-        if (collision.gameObject.name.Equals("Tester"))
+        if (collision.gameObject.tag == "Player")
         {
-            UnityEngine.Debug.Log("out");
+            text_show.SetActive(false);
             news.SetActive(false);
+            text_default.SetActive(true);
         }
 
     }
     // Update is called once per frame
     void Update()
     {
-        
+       
     }
 }
