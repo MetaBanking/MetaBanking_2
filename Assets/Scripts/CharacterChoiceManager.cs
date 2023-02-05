@@ -7,8 +7,6 @@ using UnityEngine.UI;
 
 public class CharacterChoiceManager : MonoBehaviourPunCallbacks
 {
-    public Button female1, female2, female3, female4;
-
     // Start is called before the first frame update
     void Start()
     {

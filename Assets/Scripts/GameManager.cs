@@ -27,6 +27,8 @@ public class GameManager : MonoBehaviourPunCallbacks
             PhotonNetwork.Instantiate("Suit_Tie_Black", randomSpawnPos, Quaternion.identity);
         else if (character == "Suit_Top_Grey_Black")
             PhotonNetwork.Instantiate("Suit_Top_Grey_Black", randomSpawnPos, Quaternion.identity);
+        else if (character == "Player")
+            PhotonNetwork.Instantiate("Player", randomSpawnPos, Quaternion.identity);
         // PhotonNetwork.Instantiate("Player", randomSpawnPos, Quaternion.identity);
     }
 

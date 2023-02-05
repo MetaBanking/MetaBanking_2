@@ -10,6 +10,9 @@ scopes = {
 	"last_search.DA949528" = "game"
 	"OpenInspectorPreview.DA949528" = "0"
 	"currentGroup.DA949528" = "settings"
+	"last_search.E8DA15E5" = ""
+	"OpenInspectorPreview.E8DA15E5" = "0"
+	"currentGroup.E8DA15E5" = "all"
 }
 providers = {
 	adb = {
@@ -61,6 +64,7 @@ searchItemFavorites = [
 ]
 savedSearchesSortOrder = 0
 showSavedSearchPanel = false
+hideTabs = false
 expandedQueries = [
 ]
 queryBuilder = false
