@@ -1931,7 +1931,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3675302843711599352}
-  m_LocalRotation: {x: -0.0016813981, y: -0.003892645, z: 0.99997497, w: 0.0056619225}
+  m_LocalRotation: {x: -0.0016813981, y: -0.0038926464, z: 0.99997497, w: 0.0056619253}
   m_LocalPosition: {x: 0.10258904, y: -0.054796983, z: 0.0023122702}
   m_LocalScale: {x: 0.99999684, y: 1.0000001, z: 0.9999953}
   m_ConstrainProportionsScale: 0
@@ -2035,7 +2035,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4060983444653305933}
   m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
-  m_LocalPosition: {x: -21.01, y: 0.87, z: -22.8}
+  m_LocalPosition: {x: -21.004, y: 0.583, z: -22.796}
   m_LocalScale: {x: 0.9, y: 0.9, z: 0.9}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -2043,7 +2043,7 @@ Transform:
   - {fileID: 6456148747072592847}
   - {fileID: 5603472742896933221}
   m_Father: {fileID: 0}
-  m_RootOrder: 21
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
 --- !u!114 &2353854926087999957
 MonoBehaviour:
@@ -2178,7 +2178,6 @@ MonoBehaviour:
         m_FootMask:
           serializedVersion: 2
           m_Bits: 4294967295
-        m_SmoothTime: 0.25
     - rid: 5735539769207160839
       type: {class: InputValueVector2MotionPrimary, ns: GameCreator.Runtime.Common, asm: GameCreator.Runtime.Core}
     - rid: 5735540285216915456
