@@ -64,4 +64,5 @@ crashlytics-build.properties
 
 # Build Files
 /App
+/Assets/Vuplex
 /Assets/Plugins
