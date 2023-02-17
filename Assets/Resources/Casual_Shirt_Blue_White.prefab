@@ -1651,7 +1651,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4964143947635281110}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0.107, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -4123,9 +4123,9 @@ CapsuleCollider:
   m_Enabled: 1
   serializedVersion: 2
   m_Radius: 0.23
-  m_Height: 1.8545882
+  m_Height: 2.03
   m_Direction: 1
-  m_Center: {x: 0, y: 0.9275301, z: 0}
+  m_Center: {x: 0, y: 1.019, z: 0}
 --- !u!114 &5973059407130204555
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4272,15 +4272,15 @@ MonoBehaviour:
     m_UpdateTime: 0
   m_Kernel:
     m_Player:
-      rid: 5735539769207160832
+      rid: 4181654218243833986
     m_Motion:
-      rid: 5735539769207160833
+      rid: 4181654218243833988
     m_Driver:
-      rid: 5735539769207160834
+      rid: 4181654218243833990
     m_Facing:
-      rid: 5735540285216915458
+      rid: 4181654218243833991
     m_Animim:
-      rid: 5735539769207160836
+      rid: 4181654218243833992
   m_InverseKinematics:
     m_RigLayers:
       m_Rigs:
@@ -4302,29 +4302,27 @@ MonoBehaviour:
   references:
     version: 2
     RefIds:
-    - rid: 2531411151074361366
-      type: {class: InteractionModeNearCharacter, ns: GameCreator.Runtime.Characters, asm: GameCreator.Runtime.Core}
-      data:
-        m_Offset: {x: 0, y: 0, z: 1}
-    - rid: 5735539769207160832
+    - rid: 4181654218243833986
       type: {class: UnitPlayerDirectional, ns: GameCreator.Runtime.Characters, asm: GameCreator.Runtime.Core}
       data:
         m_IsControllable: 1
         m_InputMove:
           m_Input:
-            rid: 5735539769207160839
-    - rid: 5735539769207160833
+            rid: 4181654218243833987
+    - rid: 4181654218243833987
+      type: {class: InputValueVector2MotionPrimary, ns: GameCreator.Runtime.Common, asm: GameCreator.Runtime.Core}
+    - rid: 4181654218243833988
       type: {class: UnitMotionController, ns: GameCreator.Runtime.Characters, asm: GameCreator.Runtime.Core}
       data:
         m_Interaction:
           m_Radius: 2
           m_Mode:
             m_InteractionMode:
-              rid: 2531411151074361366
-        m_Speed: 6
-        m_Rotation: 1080
+              rid: 4181654218243833989
+        m_Speed: 4
+        m_Rotation: 1800
         m_Mass: 80
-        m_Height: 0
+        m_Height: 2
         m_Radius: 0.2
         m_GravityUpwards: -9.81
         m_GravityDownwards: -9.81
@@ -4342,7 +4340,11 @@ MonoBehaviour:
           m_InSuccession: 0
           m_DashInAir: 0
           m_Cooldown: 1
-    - rid: 5735539769207160834
+    - rid: 4181654218243833989
+      type: {class: InteractionModeNearCharacter, ns: GameCreator.Runtime.Characters, asm: GameCreator.Runtime.Core}
+      data:
+        m_Offset: {x: 0, y: 0, z: 1}
+    - rid: 4181654218243833990
       type: {class: UnitDriverController, ns: GameCreator.Runtime.Characters, asm: GameCreator.Runtime.Core}
       data:
         m_SkinWidth: 0.08
@@ -4350,16 +4352,21 @@ MonoBehaviour:
         m_MaxSlope: 45
         m_StepHeight: 0.3
         m_Plane: 0
-    - rid: 5735539769207160836
+    - rid: 4181654218243833991
+      type: {class: UnitFacingPivot, ns: GameCreator.Runtime.Characters, asm: GameCreator.Runtime.Core}
+      data:
+        m_UpdateRotation: 1
+        m_DirectionFrom: 0
+    - rid: 4181654218243833992
       type: {class: UnitAnimimKinematic, ns: GameCreator.Runtime.Characters, asm: GameCreator.Runtime.Core}
       data:
         m_ModelPosition: 0
         m_SmoothTime: 0.5
-        m_Mannequin: {fileID: 4964143947635281109}
-        m_Animator: {fileID: 2503560847804636378}
-        m_StartState: {fileID: 11400000, guid: dbd6d6c3d984c4a279cbf4bc5404fd16, type: 2}
+        m_Mannequin: {fileID: 0}
+        m_Animator: {fileID: 0}
+        m_StartState: {fileID: 0}
         m_BoneRack:
-          m_Skeleton: {fileID: 11400000, guid: 5809449d43408435db32108bd69aa82c, type: 2}
+          m_Skeleton: {fileID: 0}
         m_Reaction: {fileID: 0}
         m_Breathing:
           m_Exertion: 0.1
@@ -4389,8 +4396,6 @@ MonoBehaviour:
           serializedVersion: 2
           m_Bits: 4294967295
         m_SmoothTime: 0.25
-    - rid: 5735539769207160839
-      type: {class: InputValueVector2MotionPrimary, ns: GameCreator.Runtime.Common, asm: GameCreator.Runtime.Core}
     - rid: 5735540285216915456
       type: {class: Bone, ns: GameCreator.Runtime.Characters, asm: GameCreator.Runtime.Core}
       data:
@@ -4409,8 +4414,3 @@ MonoBehaviour:
         m_Type: 1
         m_Human: 6
         m_Path: 
-    - rid: 5735540285216915458
-      type: {class: UnitFacingPivot, ns: GameCreator.Runtime.Characters, asm: GameCreator.Runtime.Core}
-      data:
-        m_UpdateRotation: 1
-        m_DirectionFrom: 0
