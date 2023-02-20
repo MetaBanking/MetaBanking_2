@@ -4319,10 +4319,10 @@ MonoBehaviour:
           m_Mode:
             m_InteractionMode:
               rid: 4181654218243833989
-        m_Speed: 4
-        m_Rotation: 1800
+        m_Speed: 6
+        m_Rotation: 1080
         m_Mass: 80
-        m_Height: 2
+        m_Height: 0
         m_Radius: 0.2
         m_GravityUpwards: -9.81
         m_GravityDownwards: -9.81
@@ -4362,9 +4362,9 @@ MonoBehaviour:
       data:
         m_ModelPosition: 0
         m_SmoothTime: 0.5
-        m_Mannequin: {fileID: 0}
-        m_Animator: {fileID: 0}
-        m_StartState: {fileID: 0}
+        m_Mannequin: {fileID: 4964143947635281109}
+        m_Animator: {fileID: 2503560847804636378}
+        m_StartState: {fileID: 11400000, guid: dbd6d6c3d984c4a279cbf4bc5404fd16, type: 2}
         m_BoneRack:
           m_Skeleton: {fileID: 0}
         m_Reaction: {fileID: 0}
