@@ -3849,6 +3849,7 @@ GameObject:
   - component: {fileID: 3337699471194563596}
   - component: {fileID: -6353380943012986897}
   - component: {fileID: 2456538324660819955}
+  - component: {fileID: -1516475246425648609}
   m_Layer: 0
   m_Name: Mannequin
   m_TagString: Untagged
@@ -3906,6 +3907,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_RigLayers:
+  - m_Rig: {fileID: 0}
+    m_Active: 1
   - m_Rig: {fileID: 0}
     m_Active: 1
   - m_Rig: {fileID: 0}
@@ -3980,6 +3983,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!114 &2456538324660819955
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7242902985271078936}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2714d49740854401a82d89c4c310744d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &-1516475246425648609
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
