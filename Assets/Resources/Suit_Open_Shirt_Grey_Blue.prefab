@@ -3231,6 +3231,7 @@ GameObject:
   - component: {fileID: 7494712513760223047}
   - component: {fileID: 8658093015253082175}
   - component: {fileID: 8507177798477647543}
+  - component: {fileID: 6371993977579215225}
   m_Layer: 0
   m_Name: Suit_Open_Shirt_Grey_Blue
   m_TagString: Player
@@ -3588,6 +3589,7 @@ MonoBehaviour:
         m_FootMask:
           serializedVersion: 2
           m_Bits: 4294967295
+        m_SmoothTime: 0.25
     - rid: 5735539769207160839
       type: {class: InputValueVector2MotionPrimary, ns: GameCreator.Runtime.Common, asm: GameCreator.Runtime.Core}
     - rid: 5735540285216915456
@@ -3613,6 +3615,22 @@ MonoBehaviour:
       data:
         m_UpdateRotation: 1
         m_DirectionFrom: 0
+--- !u!114 &6371993977579215225
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6265565760484126172}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9b8c4a61274f60b4ea5fb4299cfdbf14, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ShowLayerWeightsInspector: 1
+  ShowParameterInspector: 1
+  m_SynchronizeParameters: []
+  m_SynchronizeLayers: []
 --- !u!1 &6433621046962596419
 GameObject:
   m_ObjectHideFlags: 0

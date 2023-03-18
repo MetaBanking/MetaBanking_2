@@ -4153,6 +4153,7 @@ GameObject:
   - component: {fileID: 6976518310128618222}
   - component: {fileID: 6470353528263101888}
   - component: {fileID: 506494355969217288}
+  - component: {fileID: -2594950754560215206}
   m_Layer: 0
   m_Name: Suit_Shirt_Beige
   m_TagString: Player
@@ -4510,6 +4511,7 @@ MonoBehaviour:
         m_FootMask:
           serializedVersion: 2
           m_Bits: 4294967295
+        m_SmoothTime: 0.25
     - rid: 5735539769207160839
       type: {class: InputValueVector2MotionPrimary, ns: GameCreator.Runtime.Common, asm: GameCreator.Runtime.Core}
     - rid: 5735540285216915456
@@ -4535,6 +4537,22 @@ MonoBehaviour:
       data:
         m_UpdateRotation: 1
         m_DirectionFrom: 0
+--- !u!114 &-2594950754560215206
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8693339307197869040}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9b8c4a61274f60b4ea5fb4299cfdbf14, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ShowLayerWeightsInspector: 1
+  ShowParameterInspector: 1
+  m_SynchronizeParameters: []
+  m_SynchronizeLayers: []
 --- !u!1 &8750666529214853193
 GameObject:
   m_ObjectHideFlags: 0

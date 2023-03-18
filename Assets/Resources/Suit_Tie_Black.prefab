@@ -424,6 +424,7 @@ GameObject:
   - component: {fileID: 6188710280244908787}
   - component: {fileID: 5587671780559365816}
   - component: {fileID: 7976501711329665149}
+  - component: {fileID: -5051615397112111813}
   m_Layer: 0
   m_Name: Suit_Tie_Black
   m_TagString: Player
@@ -807,6 +808,22 @@ MonoBehaviour:
       data:
         m_UpdateRotation: 1
         m_DirectionFrom: 0
+--- !u!114 &-5051615397112111813
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1648502829247092531}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9b8c4a61274f60b4ea5fb4299cfdbf14, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ShowLayerWeightsInspector: 1
+  ShowParameterInspector: 1
+  m_SynchronizeParameters: []
+  m_SynchronizeLayers: []
 --- !u!1 &1827258632137396396
 GameObject:
   m_ObjectHideFlags: 0

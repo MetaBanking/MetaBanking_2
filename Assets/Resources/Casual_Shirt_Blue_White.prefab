@@ -3583,6 +3583,7 @@ GameObject:
   - component: {fileID: -575948962784700294}
   - component: {fileID: -7233620706141101943}
   - component: {fileID: 1601135196941115759}
+  - component: {fileID: 6448853826803179901}
   m_Layer: 0
   m_Name: Casual_Shirt_Blue_White
   m_TagString: Player
@@ -3940,6 +3941,7 @@ MonoBehaviour:
         m_FootMask:
           serializedVersion: 2
           m_Bits: 4294967295
+        m_SmoothTime: 0.25
     - rid: 5735539769207160839
       type: {class: InputValueVector2MotionPrimary, ns: GameCreator.Runtime.Common, asm: GameCreator.Runtime.Core}
     - rid: 5735540285216915456
@@ -3978,6 +3980,22 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Char: {fileID: -7233620706141101943}
+--- !u!114 &6448853826803179901
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8567086636612214462}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9b8c4a61274f60b4ea5fb4299cfdbf14, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ShowLayerWeightsInspector: 1
+  ShowParameterInspector: 1
+  m_SynchronizeParameters: []
+  m_SynchronizeLayers: []
 --- !u!1 &8745838170008672545
 GameObject:
   m_ObjectHideFlags: 0
