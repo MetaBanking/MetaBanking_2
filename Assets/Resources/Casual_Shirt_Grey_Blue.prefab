@@ -952,6 +952,7 @@ MonoBehaviour:
   rotateSpeed: 50
   x: 0
   y: 0
+  damping: 10
 --- !u!23 &1439492354009887189
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -1061,7 +1062,9 @@ MonoBehaviour:
   OwnershipTransfer: 0
   observableSearch: 2
   ObservedComponents:
+  - {fileID: 5277744239758052313}
   - {fileID: 5462658054991636468}
+  - {fileID: 270442663185306462}
   sceneViewId: 0
   InstantiationId: 0
   isRuntimeInstantiated: 0
@@ -1108,7 +1111,7 @@ MonoBehaviour:
     m_RecoverFaceUp: {fileID: 7400000, guid: 194b77c6fa7d4417088d9e34c980a5aa, type: 2}
   m_UniqueID:
     m_SerializedID:
-      m_String: 9185bdfa-7b59-4d3a-9c91-729a1787fb8e
+      m_String: f1ba496c-f828-4c02-99e3-11f89aec174c
   references:
     version: 2
     RefIds:

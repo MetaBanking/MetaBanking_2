@@ -4,17 +4,10 @@
 TagManager:
   serializedVersion: 2
   tags:
-  - WallRun
   - Stair
+  - WallRun
   - Climb
   - Fly
-  - Bullet
-  - Door
-  - Selector
-  - FEMALE3
-  - FEMALE1
-  - FEMALE4
-  - FEMALE2
   layers:
   - Default
   - TransparentFX
