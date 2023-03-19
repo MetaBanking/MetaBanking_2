@@ -13,13 +13,13 @@ MonoBehaviour:
   m_Name: core.welcome
   m_EditorClassIdentifier: 
   m_Repository:
-    rid: 4559823592937488409
+    rid: 1511687094528638980
   references:
     version: 2
     RefIds:
-    - rid: 4559823592937488409
+    - rid: 1511687094528638980
       type: {class: WelcomeRepository, ns: GameCreator.Runtime.Common, asm: GameCreator.Runtime.Core}
       data:
-        m_OpenOnStartup: 1
+        m_OpenOnStartup: 0
         m_WelcomeData:
           pages: []

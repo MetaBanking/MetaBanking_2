@@ -13,11 +13,11 @@ MonoBehaviour:
   m_Name: dialogue.general
   m_EditorClassIdentifier: 
   m_Repository:
-    rid: 4559823592937488405
+    rid: 1511687094528638976
   references:
     version: 2
     RefIds:
-    - rid: 4559823592937488405
+    - rid: 1511687094528638976
       type: {class: DialogueRepository, ns: GameCreator.Runtime.Dialogue, asm: GameCreator.Runtime.Dialogue}
       data:
         m_Values:
