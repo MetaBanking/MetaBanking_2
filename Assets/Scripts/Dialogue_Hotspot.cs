@@ -37,6 +37,7 @@ public class Dialogue_Hotspot : MonoBehaviour
     {
         if (collision.gameObject.tag == "Player")
         {
+            text_show.SetActive(false);
             dial.SetActive(false);
         }
 
