@@ -2016,10 +2016,10 @@ GameObject:
   - component: {fileID: 2353854926087999957}
   - component: {fileID: 5232901365539850044}
   - component: {fileID: 7593843192501628198}
-  - component: {fileID: 7042768475381975729}
   - component: {fileID: 5038083401033081199}
+  - component: {fileID: 7042768475381975729}
+  - component: {fileID: -4625050493260105673}
   - component: {fileID: 999870040160055374}
-  - component: {fileID: 1640222139312137206}
   - component: {fileID: 7832323550097521346}
   m_Layer: 0
   m_Name: Player
@@ -2273,6 +2273,18 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &5038083401033081199
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4060983444653305933}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0d4fe2a704d317042ab44bff94aafc4c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &7042768475381975729
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2289,7 +2301,7 @@ MonoBehaviour:
   m_SynchronizeRotation: 1
   m_SynchronizeScale: 0
   m_UseLocal: 1
---- !u!114 &5038083401033081199
+--- !u!114 &-4625050493260105673
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -2298,9 +2310,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 4060983444653305933}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0d4fe2a704d317042ab44bff94aafc4c, type: 3}
+  m_Script: {fileID: 11500000, guid: 9b8c4a61274f60b4ea5fb4299cfdbf14, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ShowLayerWeightsInspector: 1
+  ShowParameterInspector: 1
+  m_SynchronizeParameters: []
+  m_SynchronizeLayers: []
 --- !u!114 &999870040160055374
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2321,31 +2337,10 @@ MonoBehaviour:
   observableSearch: 2
   ObservedComponents:
   - {fileID: 7042768475381975729}
+  - {fileID: -4625050493260105673}
   sceneViewId: 0
   InstantiationId: 0
   isRuntimeInstantiated: 0
---- !u!64 &1640222139312137206
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4060983444653305933}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 5
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 0}
 --- !u!114 &7832323550097521346
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2358,7 +2353,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7c9f04395539bec47b3e105e8e0057c8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Char: {fileID: 2353854926087999957}
+  Char: {fileID: 0}
 --- !u!1 &4072113427881568996
 GameObject:
   m_ObjectHideFlags: 0

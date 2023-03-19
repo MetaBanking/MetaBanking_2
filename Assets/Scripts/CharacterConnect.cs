@@ -10,19 +10,25 @@ public class CharacterConnect : MonoBehaviourPun
 {
     public Character Char;
 
+    private PhotonView pv;
+
     // Start is called before the first frame update
     void Start()
     {
         Char = GetComponent<Character>();
+        //Player = GetComponent<Character>().Player;
+
+        pv = GetComponent<PhotonView>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (photonView.IsMine == false)
+        if (pv.IsMine == false)
         {
             Char.enabled = false;
-        }else if (photonView.IsMine == true)
+
+        }else if (pv.IsMine == true)
         {
             Char.enabled = true;
         }
