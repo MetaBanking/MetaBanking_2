@@ -2021,6 +2021,7 @@ GameObject:
   - component: {fileID: 999870040160055374}
   - component: {fileID: 1640222139312137206}
   - component: {fileID: 7832323550097521346}
+  - component: {fileID: 4723656849666307274}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -2179,6 +2180,7 @@ MonoBehaviour:
         m_FootMask:
           serializedVersion: 2
           m_Bits: 4294967295
+        m_SmoothTime: 0.25
     - rid: 5735539769207160839
       type: {class: InputValueVector2MotionPrimary, ns: GameCreator.Runtime.Common, asm: GameCreator.Runtime.Core}
     - rid: 5735540285216915456
@@ -2359,6 +2361,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Char: {fileID: 2353854926087999957}
+--- !u!114 &4723656849666307274
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4060983444653305933}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7c9f04395539bec47b3e105e8e0057c8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Char: {fileID: 0}
 --- !u!1 &4072113427881568996
 GameObject:
   m_ObjectHideFlags: 0

@@ -1,201 +1,129 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using Photon.Pun;
 
+// 유니티에는 쓰레드가 없음.
 public class PlayerControl_2 : MonoBehaviourPun
 {
-    // 스피드 조정 변수
-    [SerializeField]
-    private float walkSpeed;
-    [SerializeField]
-    private float runSpeed;
-    [SerializeField]
-    private float crouchSpeed;
-    private float applySpeed;
+    // 기본이 private => private 키워드는 생략 가능
+    float h = 0.0f;                 // 좌, 우 값을 담을 변수
+    float v = 0.0f;                 // 상, 하 값을 담을 변수
+    float r = 0.0f;                 // 회전값을 담을 변수
+    float moveSpeed = 5.0f;         // 이동 속도 (거리)
+    float rotationSpeed = 500.0f;   // 회전 속도를 담을 변수
+    Transform playerTr;             // 주인공의 Transform 을 저장할 변수
+    static int bottle = 0;                 // 획득한 키의 갯수
 
-    // 점프 정도
-    [SerializeField]
-    private float jumpForce;
+    // Jump
+    bool isJump = false;            //점프가 아닌 경우 false, 점프 중이면true
+    float jumpPower = 5.0f;
+    Rigidbody rigidbody;
 
-    // 상태 변수
-    private bool isRun = false;
-    private bool isGround = true;
-    private bool isCrouch = false;
+    // Sound
+    AudioSource audioSource;
+    public AudioClip audioClip;
 
-    // 앉았을 때 얼마나 앉을지 결정하는 변수
-    [SerializeField]
-    private float crouchPosY;
-    private float originPosY;
-    private float applyCrouchPosY;
+    // Effect
+    public GameObject effectObject;
 
-    // 민감도
-    [SerializeField]
-    private float lookSensitivity;
+    // Animation
+    Animator animator;
 
-    // 카메라 한계
-    [SerializeField]
-    private float cameraRotationLimit;
-    private float currentCameraRotationX;
-
-    // 필요한 컴포넌트
-    [SerializeField]
-    private Camera theCamera;
-    private Rigidbody myRigid;
-    private CapsuleCollider capsuleCollider;
-
-
+    // Start is called before the first frame update - 초기화같은 느낌
     void Start()
     {
-        // 컴포넌트 할당
-        capsuleCollider = GetComponent<CapsuleCollider>();
-        myRigid = GetComponent<Rigidbody>();
-
-        // 초기화
-        applySpeed = walkSpeed;
-        theCamera = Camera.main;
-        originPosY = theCamera.transform.localPosition.y;
-        applyCrouchPosY = originPosY;
+        // 나랑 연결되어 있는 Object 의 Transform (9가지 데이터를 가짐) 을 가져와라!
+        playerTr = GetComponent<Transform>();   // GetComponent 앞에는 this.gameObject. 가 생략되어 있음.
+        rigidbody = GetComponent<Rigidbody>();
+        audioSource = GetComponent<AudioSource>();
+        animator = GetComponent<Animator>();
     }
 
+    // Update is called once per frame - 반복적으로 동작하는 거
     void Update()
     {
-        IsGround();
-        TryJump();
-        TryRun();
-        TryCrouch();
-        Move();
-        CameraRotation();
-        CharacterRotation();
-    }
+        //로컬 아니라면 진입하지 못하도록 처리
+        if (!photonView.IsMine)
+            return;
 
-    // 지면 체크
-    private void IsGround()
-    {
-        isGround = Physics.Raycast(transform.position, Vector3.down, capsuleCollider.bounds.extents.y + 0.1f);
-    }
+        h = Input.GetAxis("Horizontal");
+        v = Input.GetAxis("Vertical");
+        r = Input.GetAxis("Mouse X");
+        // Debug.Log("H: " + h.ToString() + ", V: " + v.ToString());
 
-    // 점프 시도
-    private void TryJump()
-    {
-        if (Input.GetKeyDown(KeyCode.Space) && isGround)
-        {
-            Jump();
-        }
-    }
-
-    // 점프
-    private void Jump()
-    {
-        if (isCrouch)
-            Crouch();
-
-        myRigid.velocity = transform.up * jumpForce;
-    }
-
-    // 달리기 시도
-    private void TryRun()
-    {
+        // 달리기 효과
         if (Input.GetKey(KeyCode.LeftShift))
         {
-            Running();
-        }
-        if (Input.GetKeyUp(KeyCode.LeftShift))
-        {
-            RunningCancel();
-        }
-    }
-
-    // 달리기
-    private void Running()
-    {
-        if (isCrouch)
-            Crouch();
-
-        isRun = true;
-        applySpeed = runSpeed;
-    }
-
-    // 달리기 취소
-    private void RunningCancel()
-    {
-        isRun = false;
-        applySpeed = walkSpeed;
-    }
-
-    // 앉기 시도
-    private void TryCrouch()
-    {
-        if (Input.GetKeyDown(KeyCode.LeftControl))
-        {
-            Crouch();
-        }
-    }
-
-    // 앉기 동작
-    private void Crouch()
-    {
-        isCrouch = !isCrouch;
-        if (isCrouch)
-        {
-            applySpeed = crouchSpeed;
-            applyCrouchPosY = crouchPosY;
+            moveSpeed = 10.0f;
         }
         else
         {
-            applySpeed = walkSpeed;
-            applyCrouchPosY = originPosY;
+            moveSpeed = 3.0f;
         }
 
-        StartCoroutine(CrouchCoroutine());
-    }
+        // 방향
+        Vector3 moveDir = (Vector3.forward * v) + (Vector3.right * h);
 
-    // 부드러운 앉기 동작
-    IEnumerator CrouchCoroutine()
-    {
-        float _posY = theCamera.transform.localPosition.y;
-        int count = 0;
+        // Vector3: 왼손 좌표계. x, y, z 임!
+        // playerTr.Translate(new Vector3(h, 0, v) * moveSpeed * Time.deltaTime);
 
-        while (_posY != applyCrouchPosY)
+        // Space
+        //  World 좌표는 특정 위치도 찾기 힘들기 때문에 Local 을 선호함??????? (졸면서 씀...)
+        playerTr.Translate(moveDir.normalized * moveSpeed * Time.deltaTime, Space.Self);
+
+        playerTr.Rotate(new Vector3(0, r, 0) * rotationSpeed * Time.deltaTime);
+
+        // Jump: 바닥에 붙어있을 때만 점프가 가능하도록!
+        if (Input.GetButtonDown("Jump") && isJump == false)
         {
-            count++;
-            _posY = Mathf.Lerp(_posY, applyCrouchPosY, 0.2f);
-            theCamera.transform.localPosition = new Vector3(0, _posY, 0);
-            if (count > 15)
-                break;
-            yield return null;
+            rigidbody.AddForce(Vector3.up * jumpPower, ForceMode.Impulse);
+            isJump = true;
         }
-        theCamera.transform.localPosition = new Vector3(0, applyCrouchPosY, 0);
+
+        // Animation
+        if (v == 0.0f && h == 0.0f)
+        {
+            // Stop
+            animator.SetBool("Walk", false);
+        }
+        else
+        {
+            // Walk
+            animator.SetBool("Walk", true);
+        }
     }
 
-    private void Move()
+    // collision: 나랑 부딫힌 녀석의 정보를 담고 있는 변수
+    private void OnCollisionEnter(Collision collision)
     {
-        float _moveDirX = Input.GetAxisRaw("Horizontal");
-        float _moveDirZ = Input.GetAxisRaw("Vertical");
+        //로컬 아니라면 진입하지 못하도록 처리
+        if (!photonView.IsMine)
+            return;
 
-        Vector3 _moveHorizontal = transform.right * _moveDirX ;
-        Vector3 _moveVertical = transform.forward * _moveDirZ ;
+        if (collision.gameObject.tag == "BOTTLE")
+        {
+            if (bottle < 3)
+            {
+                bottle += 1;
+                Debug.Log("획득한 보틀 수 : " + bottle.ToString());
 
-        Vector3 _velocity = (_moveHorizontal + _moveVertical ).normalized * applySpeed;
+                // audioClip 의 오디오 파일을 한 번만 재생해라!
+                audioSource.PlayOneShot(audioClip);
 
-        myRigid.MovePosition(transform.position + _velocity * Time.deltaTime);
-    }
+                // Effect
+                Vector3 effectPosition = collision.gameObject.GetComponent<Transform>().position;   // 병의 위치값
+                GameObject effect = Instantiate(effectObject, effectPosition, Quaternion.identity); // 
+                Destroy(effect, 2.0f);
+                Destroy(collision.gameObject);
+            }
+        }
 
-    private void CameraRotation()
-    {
-        float _xRotation = Input.GetAxisRaw("Mouse Y");
-        float _cameraRotationX = _xRotation * lookSensitivity;
-
-        currentCameraRotationX -= _cameraRotationX;
-        currentCameraRotationX = Mathf.Clamp(currentCameraRotationX, -cameraRotationLimit, cameraRotationLimit);
-
-        theCamera.transform.localEulerAngles = new Vector3(currentCameraRotationX, 0f, 0f);
-    }
-
-    private void CharacterRotation()
-    {
-        float _yRotation = Input.GetAxisRaw("Mouse X");
-        Vector3 _characterRotationY = new Vector3(0f, _yRotation, 0f) * lookSensitivity;
-        myRigid.MoveRotation(myRigid.rotation * Quaternion.Euler(_characterRotationY));
+        // Jump
+        if (collision.gameObject.name == "Floor")
+        {
+            isJump = false;
+        }
     }
 }
