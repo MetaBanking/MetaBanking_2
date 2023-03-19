@@ -6,6 +6,7 @@ public class DialogueProcedure : MonoBehaviour
 {
     public GameObject intro;
     public GameObject account;
+    public GameObject account2;
     public GameObject book;
     public GameObject helpdesk;
     public GameObject nothanks;
@@ -39,6 +40,11 @@ public class DialogueProcedure : MonoBehaviour
         nothanks.SetActive(true);
     }
 
+    public void AccounttoAccount2()
+    {
+        account.SetActive(false);
+        account2.SetActive(true);
+    }
 
     // Update is called once per frame
     void Update()
