@@ -2604,7 +2604,6 @@ GameObject:
   - component: {fileID: -6190194193185118940}
   - component: {fileID: 6448853826803179901}
   - component: {fileID: -575948962784700294}
-  - component: {fileID: 6074049353029655563}
   m_Layer: 0
   m_Name: Casual_Shirt_Blue_White
   m_TagString: Player
@@ -2801,7 +2800,6 @@ MonoBehaviour:
   OwnershipTransfer: 0
   observableSearch: 2
   ObservedComponents:
-  - {fileID: 6563263280444103471}
   - {fileID: -1654939970684372051}
   - {fileID: 6448853826803179901}
   sceneViewId: 0
@@ -2846,19 +2844,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0d4fe2a704d317042ab44bff94aafc4c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &6074049353029655563
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8567086636612214462}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7c9f04395539bec47b3e105e8e0057c8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Char: {fileID: -3388481479007903576, guid: 8f0f169d28d3fe44c8b747ce9a45efa7, type: 3}
 --- !u!1 &8745838170008672545
 GameObject:
   m_ObjectHideFlags: 0

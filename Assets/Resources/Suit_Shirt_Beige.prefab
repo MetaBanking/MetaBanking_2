@@ -4150,11 +4150,8 @@ GameObject:
   - component: {fileID: 6888124231406179936}
   - component: {fileID: 8045708430707932747}
   - component: {fileID: 706462233859080519}
-  - component: {fileID: 6976518310128618222}
   - component: {fileID: 6470353528263101888}
-  - component: {fileID: 506494355969217288}
   - component: {fileID: -2594950754560215206}
-  - component: {fileID: -9125517253703158233}
   m_Layer: 0
   m_Name: Suit_Shirt_Beige
   m_TagString: Player
@@ -4257,7 +4254,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8693339307197869040}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9e9888555dce9ba4182864980b27ab02, type: 3}
   m_Name: 
@@ -4266,6 +4263,7 @@ MonoBehaviour:
   rotateSpeed: 50
   x: 0
   y: 0
+  damping: 10
 --- !u!23 &6888124231406179936
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -4336,26 +4334,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0d4fe2a704d317042ab44bff94aafc4c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &6976518310128618222
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8693339307197869040}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5d833ac4f122d444dade96bbddb353ba, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  walkSpeed: 0
-  runSpeed: 0
-  crouchSpeed: 0
-  jumpForce: 0
-  crouchPosY: 0
-  lookSensitivity: 0
-  cameraRotationLimit: 0
-  theCamera: {fileID: 0}
 --- !u!114 &6470353528263101888
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4376,168 +4354,10 @@ MonoBehaviour:
   observableSearch: 2
   ObservedComponents:
   - {fileID: 8045708430707932747}
+  - {fileID: -2594950754560215206}
   sceneViewId: 0
   InstantiationId: 0
   isRuntimeInstantiated: 0
---- !u!114 &506494355969217288
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8693339307197869040}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 48e4aa7a58d404413af1c9111cdcd3f1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_IsPlayer: 1
-  m_Time:
-    m_UpdateTime: 0
-  m_Kernel:
-    m_Player:
-      rid: 5735539769207160832
-    m_Motion:
-      rid: 5735539769207160833
-    m_Driver:
-      rid: 5735539769207160834
-    m_Facing:
-      rid: 5735540285216915458
-    m_Animim:
-      rid: 5735539769207160836
-  m_InverseKinematics:
-    m_RigLayers:
-      m_Rigs:
-      - rid: 5735539769207160837
-      - rid: 5735539769207160838
-  m_Footsteps:
-    m_Feet:
-    - rid: 5735540285216915456
-    - rid: 5735540285216915457
-    m_FootstepSounds:
-      m_SoundsAsset: {fileID: 11400000, guid: 8f22790c8b04e44378551f6e60b19fa3, type: 2}
-  m_Ragdoll:
-    m_TransitionDuration: 0.2
-    m_RecoverFaceDown: {fileID: 7400000, guid: 2c2d14e293e6f4e41a81ca7f99e84058, type: 2}
-    m_RecoverFaceUp: {fileID: 7400000, guid: 194b77c6fa7d4417088d9e34c980a5aa, type: 2}
-  m_UniqueID:
-    m_SerializedID:
-      m_String: 9185bdfa-7b59-4d3a-9c91-729a1787fb8e
-  references:
-    version: 2
-    RefIds:
-    - rid: 2531411151074361366
-      type: {class: InteractionModeNearCharacter, ns: GameCreator.Runtime.Characters, asm: GameCreator.Runtime.Core}
-      data:
-        m_Offset: {x: 0, y: 0, z: 1}
-    - rid: 5735539769207160832
-      type: {class: UnitPlayerDirectional, ns: GameCreator.Runtime.Characters, asm: GameCreator.Runtime.Core}
-      data:
-        m_IsControllable: 1
-        m_InputMove:
-          m_Input:
-            rid: 5735539769207160839
-    - rid: 5735539769207160833
-      type: {class: UnitMotionController, ns: GameCreator.Runtime.Characters, asm: GameCreator.Runtime.Core}
-      data:
-        m_Interaction:
-          m_Radius: 2
-          m_Mode:
-            m_InteractionMode:
-              rid: 2531411151074361366
-        m_Speed: 6
-        m_Rotation: 1080
-        m_Mass: 80
-        m_Height: 0
-        m_Radius: 0.2
-        m_GravityUpwards: -9.81
-        m_GravityDownwards: -9.81
-        m_TerminalVelocity: -53
-        m_Acceleration:
-          m_UseAcceleration: 1
-          m_Acceleration: 10
-          m_Deceleration: 4
-        m_Jump:
-          m_CanJump: 1
-          m_AirJumps: 0
-          m_JumpForce: 5
-          m_JumpCooldown: 0.5
-        m_Dash:
-          m_InSuccession: 0
-          m_DashInAir: 0
-          m_Cooldown: 1
-    - rid: 5735539769207160834
-      type: {class: UnitDriverController, ns: GameCreator.Runtime.Characters, asm: GameCreator.Runtime.Core}
-      data:
-        m_SkinWidth: 0.08
-        m_PushForce: 1
-        m_MaxSlope: 45
-        m_StepHeight: 0.3
-        m_Plane: 0
-    - rid: 5735539769207160836
-      type: {class: UnitAnimimKinematic, ns: GameCreator.Runtime.Characters, asm: GameCreator.Runtime.Core}
-      data:
-        m_ModelPosition: -0.18
-        m_SmoothTime: 0.5
-        m_Mannequin: {fileID: 6701396205462830699}
-        m_Animator: {fileID: 2670368988901780272}
-        m_StartState: {fileID: 11400000, guid: dbd6d6c3d984c4a279cbf4bc5404fd16, type: 2}
-        m_BoneRack:
-          m_Skeleton: {fileID: 11400000, guid: 5809449d43408435db32108bd69aa82c, type: 2}
-        m_Reaction: {fileID: 0}
-        m_Breathing:
-          m_Exertion: 0.1
-          m_Rate: 0.25
-        m_Twitching:
-          m_Weight: 0.5
-    - rid: 5735539769207160837
-      type: {class: RigLookTrack, ns: GameCreator.Runtime.Characters.IK, asm: GameCreator.Runtime.Core}
-      data:
-        m_IsExpanded: 0
-        m_Breakpoint: 0
-        m_IsEnabled: 1
-        m_TrackSpeed: 270
-        m_MaxAngle: 120
-        m_HeadWeight: 1
-        m_NeckWeight: 0.2
-        m_ChestWeight: 0.5
-        m_SpineWeight: 0.2
-    - rid: 5735539769207160838
-      type: {class: RigFeetPlant, ns: GameCreator.Runtime.Characters.IK, asm: GameCreator.Runtime.Core}
-      data:
-        m_IsExpanded: 0
-        m_Breakpoint: 0
-        m_IsEnabled: 1
-        m_FootOffset: 0
-        m_FootMask:
-          serializedVersion: 2
-          m_Bits: 4294967295
-        m_SmoothTime: 0.25
-    - rid: 5735539769207160839
-      type: {class: InputValueVector2MotionPrimary, ns: GameCreator.Runtime.Common, asm: GameCreator.Runtime.Core}
-    - rid: 5735540285216915456
-      type: {class: Bone, ns: GameCreator.Runtime.Characters, asm: GameCreator.Runtime.Core}
-      data:
-        m_IsExpanded: 1
-        m_Breakpoint: 0
-        m_IsEnabled: 1
-        m_Type: 1
-        m_Human: 5
-        m_Path: 
-    - rid: 5735540285216915457
-      type: {class: Bone, ns: GameCreator.Runtime.Characters, asm: GameCreator.Runtime.Core}
-      data:
-        m_IsExpanded: 1
-        m_Breakpoint: 0
-        m_IsEnabled: 1
-        m_Type: 1
-        m_Human: 6
-        m_Path: 
-    - rid: 5735540285216915458
-      type: {class: UnitFacingPivot, ns: GameCreator.Runtime.Characters, asm: GameCreator.Runtime.Core}
-      data:
-        m_UpdateRotation: 1
-        m_DirectionFrom: 0
 --- !u!114 &-2594950754560215206
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4554,19 +4374,6 @@ MonoBehaviour:
   ShowParameterInspector: 1
   m_SynchronizeParameters: []
   m_SynchronizeLayers: []
---- !u!114 &-9125517253703158233
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8693339307197869040}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7c9f04395539bec47b3e105e8e0057c8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Char: {fileID: 0}
 --- !u!1 &8750666529214853193
 GameObject:
   m_ObjectHideFlags: 0
