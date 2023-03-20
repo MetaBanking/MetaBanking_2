@@ -10,10 +10,11 @@ public class DialogueProcedure : MonoBehaviour
     public GameObject book;
     public GameObject helpdesk;
     public GameObject nothanks;
+    public Canvas canvas;
+
     // Start is called before the first frame update
     void Start()
     {
-
     }
 
     public void IntrotoAccount()
