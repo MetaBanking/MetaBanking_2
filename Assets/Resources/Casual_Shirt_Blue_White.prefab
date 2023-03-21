@@ -3721,8 +3721,8 @@ MonoBehaviour:
           m_Mode:
             m_InteractionMode:
               rid: 2531411151074361366
-        m_Speed: 6
-        m_Rotation: 1080
+        m_Speed: 4
+        m_Rotation: 900
         m_Mass: 80
         m_Height: 0
         m_Radius: 0.2

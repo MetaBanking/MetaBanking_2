@@ -558,103 +558,6 @@ Transform:
   m_Father: {fileID: 5069381965172776599}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &1187263395253627811
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1628630969042677101}
-  - component: {fileID: 3718780471794896294}
-  m_Layer: 0
-  m_Name: UWC_Bag
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1628630969042677101
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1187263395253627811}
-  m_LocalRotation: {x: 0.26784918, y: -0.963295, z: -0.017313596, w: -0.004465149}
-  m_LocalPosition: {x: 10.022244, y: 0.27679935, z: -7.4149985}
-  m_LocalScale: {x: 1.111111, y: 1.1111112, z: 1.1111108}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 7271385238338181309}
-  m_RootOrder: -1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!137 &3718780471794896294
-SkinnedMeshRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1187263395253627811}
-  m_Enabled: 1
-  m_CastShadows: 1
-  m_ReceiveShadows: 1
-  m_DynamicOccludee: 1
-  m_StaticShadowCaster: 0
-  m_MotionVectors: 1
-  m_LightProbeUsage: 1
-  m_ReflectionProbeUsage: 1
-  m_RayTracingMode: 3
-  m_RayTraceProcedural: 0
-  m_RenderingLayerMask: 1
-  m_RendererPriority: 0
-  m_Materials:
-  - {fileID: 2100000, guid: d75b004ef647add4aa4f95a518170c89, type: 2}
-  m_StaticBatchInfo:
-    firstSubMesh: 0
-    subMeshCount: 0
-  m_StaticBatchRoot: {fileID: 0}
-  m_ProbeAnchor: {fileID: 0}
-  m_LightProbeVolumeOverride: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_ReceiveGI: 1
-  m_PreserveUVs: 0
-  m_IgnoreNormalsForChartDetection: 0
-  m_ImportantGI: 0
-  m_StitchLightmapSeams: 1
-  m_SelectedEditorRenderState: 3
-  m_MinimumChartSize: 4
-  m_AutoUVMaxDistance: 0.5
-  m_AutoUVMaxAngle: 89
-  m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
-  serializedVersion: 2
-  m_Quality: 0
-  m_UpdateWhenOffscreen: 0
-  m_SkinnedMotionVectors: 1
-  m_Mesh: {fileID: 1024456590070923120, guid: 096990b2f57336e44935db1696f5958a, type: 3}
-  m_Bones:
-  - {fileID: 5069381965172776599}
-  - {fileID: 2246124222983403422}
-  - {fileID: 4881156546970655048}
-  - {fileID: 969729959090008287}
-  - {fileID: 3128098218773528289}
-  - {fileID: 8582277364392508497}
-  - {fileID: 1223979636512160559}
-  - {fileID: 369638843591872391}
-  - {fileID: 7141393309618838597}
-  - {fileID: 4112721417870026033}
-  - {fileID: 3470033467985196831}
-  - {fileID: 8925332740804316143}
-  m_BlendShapeWeights: []
-  m_RootBone: {fileID: 5069381965172776599}
-  m_AABB:
-    m_Center: {x: -0.26419422, y: 0.10505359, z: 0.012524217}
-    m_Extent: {x: 0.1799415, y: 0.081153765, z: 0.17418344}
-  m_DirtyAABB: 0
 --- !u!1 &1253759827823926099
 GameObject:
   m_ObjectHideFlags: 0
@@ -952,7 +855,6 @@ MonoBehaviour:
   rotateSpeed: 50
   x: 0
   y: 0
-  damping: 10
 --- !u!23 &1439492354009887189
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -1062,7 +964,6 @@ MonoBehaviour:
   OwnershipTransfer: 0
   observableSearch: 2
   ObservedComponents:
-  - {fileID: 5277744239758052313}
   - {fileID: 5462658054991636468}
   - {fileID: 270442663185306462}
   sceneViewId: 0
@@ -1134,8 +1035,8 @@ MonoBehaviour:
           m_Mode:
             m_InteractionMode:
               rid: 2531411151074361366
-        m_Speed: 6
-        m_Rotation: 1080
+        m_Speed: 4
+        m_Rotation: 900
         m_Mass: 80
         m_Height: 0
         m_Radius: 0.2
@@ -3555,7 +3456,6 @@ Transform:
   m_Children:
   - {fileID: 6955831331193128660}
   - {fileID: 3133078515865754499}
-  - {fileID: 1628630969042677101}
   - {fileID: 4438368165085003412}
   - {fileID: 2019736321049534707}
   - {fileID: 3101996501964352009}
