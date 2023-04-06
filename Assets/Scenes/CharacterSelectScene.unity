@@ -2021,11 +2021,11 @@ MonoBehaviour:
   ItemSelected: {fileID: 0}
   DontDestroy:
     UseConstant: 1
-    ConstantValue: 1
+    ConstantValue: 0
     Variable: {fileID: 0}
   DontDestroySelectedItem:
     UseConstant: 1
-    ConstantValue: 1
+    ConstantValue: 0
     Variable: {fileID: 0}
   InstantiateItems:
     UseConstant: 1
