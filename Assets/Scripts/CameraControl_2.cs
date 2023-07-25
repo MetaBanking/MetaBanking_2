@@ -5,11 +5,11 @@ using Photon.Pun;
 
 public class CameraControl_2 : MonoBehaviourPun
 {
-    Transform playerTr;             // ÃßÀûÇÒ Å¸°Ù °ÔÀÓ¿ÀºêÁ§Æ®ÀÇ Transform º¯¼ö
-    float dist = 5.0f;             // Ä«¸Þ¶ó¿ÍÀÇ ÀÏÁ¤ °Å¸®
-    float height = 2.0f;            // Ä«¸Þ¶óÀÇ ³ôÀÌ ¼³Á¤
-    float dampTrace = 20.0f;        // ºÎµå·¯¿î ÃßÀûÀ» À§ÇÑ º¯¼ö
-    private Transform cameraTr;     // Ä«¸Þ¶ó ÀÚ½ÅÀÇ Transform º¯¼ö
+    Transform playerTr;             // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ Å¸ï¿½ï¿½ ï¿½ï¿½ï¿½Ó¿ï¿½ï¿½ï¿½ï¿½ï¿½Æ®ï¿½ï¿½ Transform ï¿½ï¿½ï¿½ï¿½
+    float dist = 5.0f;             // Ä«ï¿½Þ¶ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½Å¸ï¿½
+    float height = 2.0f;            // Ä«ï¿½Þ¶ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
+    float dampTrace = 20.0f;        // ï¿½Îµå·¯ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
+    private Transform cameraTr;     // Ä«ï¿½Þ¶ï¿½ ï¿½Ú½ï¿½ï¿½ï¿½ Transform ï¿½ï¿½ï¿½ï¿½
 
     void Start()
     {
@@ -19,15 +19,15 @@ public class CameraControl_2 : MonoBehaviourPun
 
     void LateUpdate()
     {
-        //·ÎÄÃ ¾Æ´Ï¶ó¸é ÁøÀÔÇÏÁö ¸øÇÏµµ·Ï Ã³¸®
+        //ï¿½ï¿½ï¿½ï¿½ ï¿½Æ´Ï¶ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Ïµï¿½ï¿½ï¿½ Ã³ï¿½ï¿½
         if (!photonView.IsMine)
             return;
 
-        // ½ÃÀÛ À§Ä¡, µµÂø À§Ä¡, º¸Á¤°ª(?)
+        // ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Ä¡, ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Ä¡, ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½(?)
         cameraTr.position = Vector3.Lerp
-            (cameraTr.position, 
+            (cameraTr.position,
              playerTr.position - (playerTr.forward * dist) + (Vector3.up * height),
              Time.deltaTime * dampTrace);
-        cameraTr.LookAt(playerTr.position + Vector3.up);         // Ä³¸¯ÅÍ ¹æÇâÀ¸·Î º¸±â
+        cameraTr.LookAt(playerTr.position + Vector3.up);         // Ä³ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
     }
 }
