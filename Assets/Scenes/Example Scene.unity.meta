@@ -1,7 +1,14 @@
 fileFormatVersion: 2
-guid: ae75b10d1c944b54baac1fe7a9d7f8d1
+guid: 0ef1930cbe3ad47439aedb0bdb843f54
 DefaultImporter:
   externalObjects: {}
   userData: 
   assetBundleName: 
   assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 213521
+  packageName: Photon Multiplayer Template (For Game Creator 2)
+  packageVersion: 1.0.1
+  assetPath: Assets/Scenes/Example Scene.unity
+  uploadId: 490628
