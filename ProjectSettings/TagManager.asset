@@ -5,9 +5,10 @@ TagManager:
   serializedVersion: 2
   tags:
   - Stair
-  - WallRun
   - Climb
   - Fly
+  - Selector
+  - Bullet
   layers:
   - Default
   - TransparentFX
