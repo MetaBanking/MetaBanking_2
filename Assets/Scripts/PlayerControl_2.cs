@@ -5,7 +5,7 @@ using Photon.Pun;
 
 public class PlayerControl_2 : MonoBehaviourPun
 {
-    // ���ǵ� ���� ����
+    // 스피드 조정 변수
     [SerializeField]
     private float walkSpeed;
     [SerializeField]
@@ -14,31 +14,31 @@ public class PlayerControl_2 : MonoBehaviourPun
     private float crouchSpeed;
     private float applySpeed;
 
-    // ���� ����
+    // 점프 정도
     [SerializeField]
     private float jumpForce;
 
-    // ���� ����
+    // 상태 변수
     private bool isRun = false;
     private bool isGround = true;
     private bool isCrouch = false;
 
-    // �ɾ��� �� �󸶳� ������ �����ϴ� ����
+    // 앉았을 때 얼마나 앉을지 결정하는 변수
     [SerializeField]
     private float crouchPosY;
     private float originPosY;
     private float applyCrouchPosY;
 
-    // �ΰ���
+    // 민감도
     [SerializeField]
     private float lookSensitivity;
 
-    // ī�޶� �Ѱ�
+    // 카메라 한계
     [SerializeField]
     private float cameraRotationLimit;
     private float currentCameraRotationX;
 
-    // �ʿ��� ������Ʈ
+    // 필요한 컴포넌트
     [SerializeField]
     private Camera theCamera;
     private Rigidbody myRigid;
@@ -47,11 +47,11 @@ public class PlayerControl_2 : MonoBehaviourPun
 
     void Start()
     {
-        // ������Ʈ �Ҵ�
+        // 컴포넌트 할당
         capsuleCollider = GetComponent<CapsuleCollider>();
         myRigid = GetComponent<Rigidbody>();
 
-        // �ʱ�ȭ
+        // 초기화
         applySpeed = walkSpeed;
         theCamera = Camera.main;
         originPosY = theCamera.transform.localPosition.y;
@@ -69,13 +69,13 @@ public class PlayerControl_2 : MonoBehaviourPun
         CharacterRotation();
     }
 
-    // ���� üũ
+    // 지면 체크
     private void IsGround()
     {
         isGround = Physics.Raycast(transform.position, Vector3.down, capsuleCollider.bounds.extents.y + 0.1f);
     }
 
-    // ���� �õ�
+    // 점프 시도
     private void TryJump()
     {
         if (Input.GetKeyDown(KeyCode.Space) && isGround)
@@ -84,7 +84,7 @@ public class PlayerControl_2 : MonoBehaviourPun
         }
     }
 
-    // ����
+    // 점프
     private void Jump()
     {
         if (isCrouch)
@@ -93,7 +93,7 @@ public class PlayerControl_2 : MonoBehaviourPun
         myRigid.velocity = transform.up * jumpForce;
     }
 
-    // �޸��� �õ�
+    // 달리기 시도
     private void TryRun()
     {
         if (Input.GetKey(KeyCode.LeftShift))
@@ -106,7 +106,7 @@ public class PlayerControl_2 : MonoBehaviourPun
         }
     }
 
-    // �޸���
+    // 달리기
     private void Running()
     {
         if (isCrouch)
@@ -116,14 +116,14 @@ public class PlayerControl_2 : MonoBehaviourPun
         applySpeed = runSpeed;
     }
 
-    // �޸��� ���
+    // 달리기 취소
     private void RunningCancel()
     {
         isRun = false;
         applySpeed = walkSpeed;
     }
 
-    // �ɱ� �õ�
+    // 앉기 시도
     private void TryCrouch()
     {
         if (Input.GetKeyDown(KeyCode.LeftControl))
@@ -132,7 +132,7 @@ public class PlayerControl_2 : MonoBehaviourPun
         }
     }
 
-    // �ɱ� ����
+    // 앉기 동작
     private void Crouch()
     {
         isCrouch = !isCrouch;
@@ -150,7 +150,7 @@ public class PlayerControl_2 : MonoBehaviourPun
         StartCoroutine(CrouchCoroutine());
     }
 
-    // �ε巯�� �ɱ� ����
+    // 부드러운 앉기 동작
     IEnumerator CrouchCoroutine()
     {
         float _posY = theCamera.transform.localPosition.y;
@@ -173,10 +173,10 @@ public class PlayerControl_2 : MonoBehaviourPun
         float _moveDirX = Input.GetAxisRaw("Horizontal");
         float _moveDirZ = Input.GetAxisRaw("Vertical");
 
-        Vector3 _moveHorizontal = transform.right * _moveDirX ;
-        Vector3 _moveVertical = transform.forward * _moveDirZ ;
+        Vector3 _moveHorizontal = transform.right * _moveDirX;
+        Vector3 _moveVertical = transform.forward * _moveDirZ;
 
-        Vector3 _velocity = (_moveHorizontal + _moveVertical ).normalized * applySpeed;
+        Vector3 _velocity = (_moveHorizontal + _moveVertical).normalized * applySpeed;
 
         myRigid.MovePosition(transform.position + _velocity * Time.deltaTime);
     }

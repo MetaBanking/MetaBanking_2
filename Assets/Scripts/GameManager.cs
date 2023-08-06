@@ -3,7 +3,7 @@ using Photon.Pun;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
-// а║╪Ж©м ╟тюс ©ю╧Ж ©╘╨н, ╟тюс UI╦╕ ╟Э╦╝го╢б ╟тюс ╦е╢оюЗ
+// О©╫О©╫О©╫О©╫О©╫О©╫ О©╫О©╫О©╫О©╫ О©╫О©╫О©╫О©╫ О©╫О©╫О©╫О©╫, О©╫О©╫О©╫О©╫ UIО©╫О©╫ О©╫О©╫О©╫О©╫О©╫о╢О©╫ О©╫О©╫О©╫О©╫ О©╫е╢О©╫О©╫О©╫
 public class GameManager : MonoBehaviourPunCallbacks
 {
     public string[] items = { "Bottle_Endurance", "Bottle_Health", "Bottle_Mana" };

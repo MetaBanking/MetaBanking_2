@@ -25,7 +25,7 @@ public class CameraControl_2 : MonoBehaviourPun
 
         // ���� ��ġ, ���� ��ġ, ������(?)
         cameraTr.position = Vector3.Lerp
-            (cameraTr.position,
+            (cameraTr.position, 
              playerTr.position - (playerTr.forward * dist) + (Vector3.up * height),
              Time.deltaTime * dampTrace);
         cameraTr.LookAt(playerTr.position + Vector3.up);         // ĳ���� �������� ����
